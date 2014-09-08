@@ -12,23 +12,22 @@
     <script src="lib/ship.js"></script>
   </head>
   <style>
-  #game-canvas{
-    background-color: white;
-
-  }
+    body {
+      padding: 0;
+      margin: 0;
+    }
   </style>
   <body>
-    <canvas id="game-canvas" width="500" height="500"></canvas>
-    
-    
+    <canvas id="game-canvas"></canvas>
   </body>
-  
+
   <script>
     var canvas = document.getElementById("game-canvas");
     var ctx = canvas.getContext('2d');
     var game = new Asteroids.Game();
+    canvas.width = Asteroids.Game.DIM_X;
+    canvas.height = Asteroids.Game.DIM_Y;
     var view = new Asteroids.GameView(game, ctx);
     view.start();
   </script>
-  
 </html>
